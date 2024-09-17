@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Práctica 04</title>
+    <style>
+        img{
+            border-radius: 50px;
+
+        }
+    </style>
+</head>
+<body>
+    <h1>Random Picture</h1>
+    <div id="app"></div>
+   <!-- figure>(img[src="https://picsum.photos/id/$/200/200"]+figcaption{$})*100-->
+     <!--  <figure>
+        <img src="https://picsum.photos/id/1/200/200" alt="">
+        <figcaption>1</figcaption>
+        <img src="https://picsum.photos/id/2/200/200" alt="">
+        <figcaption>2</figcaption>
+       </figure>-->
+       <script>
+        const app =document.getElementById("app")
+        const url="https://picsum.photos/id/"
+        const size= "/200/200"
+        const Picture =parametros => {
+            const src= url+parametros+size
+            return `
+            <figure>
+                <img src="https://picsum.photos/id/${parametros}/200/200" alt="">
+        <figcaption id="a1">${parametros}</figcaption>
+         </figure>`
+        }
+        console.log(Picture())
+        app.innerHTML=Picture(1)+Picture(2)+Picture(3)+Picture(4)
+       </script>
+
+</body>
+</html>
